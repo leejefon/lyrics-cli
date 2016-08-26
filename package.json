@@ -1,0 +1,25 @@
+{
+  "name": "lyrics-cli",
+  "version": "1.0.0",
+  "description": "Get song lyrics on cli",
+  "main": "index.js",
+  "engines": {
+    "node": "6.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leejefon/lyrics-cli.git"
+  },
+  "author": "Jeff Lee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leejefon/lyrics-cli/issues"
+  },
+  "homepage": "https://github.com/leejefon/lyrics-cli#readme",
+  "dependencies": {
+    "request": "^2.74.0"
+  }
+}
