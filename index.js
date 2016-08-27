@@ -5,10 +5,11 @@
  * @createdAt: 2016/08/26
  */
 
-var request = require('request');
 var program = require('commander');
 var chineseConv = require('chinese-conv');
 var qs = require('querystring');
+var Promise = require('bluebird');
+var request = Promise.promisifyAll(require('request'), { multiArgs: true });
 
 var LYRICS_API_URL = 'http://gecimi.com/api/lyric/';
 
@@ -23,14 +24,20 @@ program
 		}
 
     	request
-			.get(LYRICS_API_URL + songNameSimplified, {
-				json: true
-			}, function (err, response, body) {
+			.getAsync(LYRICS_API_URL + songNameSimplified, { json: true })
+			.spread((response, body) => {
 				if (body.result.length > 0) {
-					request.get(body.result[0].lrc, function (err2, res2, body2) {
-						console.log(body2);
-					});
+					return body.result[0].lrc;
+				} else {
+					throw new Error('Song not found');
 				}
+			})
+			.then(request.getAsync)
+			.spread((response, body) => {
+				console.log(body);
+			})
+			.catch((e) => {
+				console.log('Song not found');
 			});
 	});
 
