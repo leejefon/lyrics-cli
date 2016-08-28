@@ -24,5 +24,8 @@
     "chinese-conv": "^1.0.1",
     "commander": "^2.9.0",
     "request": "^2.74.0"
+  },
+  "bin": {
+    "lyrics": "./index.js"
   }
 }
