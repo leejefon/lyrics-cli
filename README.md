@@ -11,19 +11,34 @@ npm install -g lyrics-cli
 ### Usage
 
 ```
-lyrics 歌名 [歌手名]
+Usage: lyrics [options] <name> [artist]
+
+ Options:
+
+   -h, --help            output usage information
+   -V, --version         output the version number
+   -s, --source <value>  API to use (gecimi, wangyiyun)
 ```
 
 Example:
 
 ```
-lyrics 說好的幸福呢
-lyrics 突然好想你 五月天
+lyrics 說好的幸福呢 -s gecimi
+lyrics 海闊天空 信樂團
 lyrics 'my heart will go on' 'celine dion'
 ```
 
+### TODO
+
+- Error handling
+- Tests
+- Remove time
+- Show different results
+
 ### Notes
 
-Lyrics API: http://doc.gecimi.com/en/latest/
+##### Lyrics API 1 (網易雲): http://music.163.com
 
-Since the API only supports simplified Chinese, the conversion between simplfied and traditional Chinese characters are done with node module [chinese-conv](https://github.com/Pleasurazy/chinese-conv).
+##### Lyrics API 2 (歌詞迷): http://doc.gecimi.com/en/latest/
+
+Since the API supports only simplified Chinese, the conversion between simplfied and traditional Chinese characters are done with node module [chinese-conv](https://github.com/Pleasurazy/chinese-conv).

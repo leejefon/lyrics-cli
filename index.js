@@ -18,7 +18,7 @@ var APIs = {
 program
 	.version('v0.1.0')
 	.arguments('<name> [artist]')
-	.option('-s, --source <value>', 'API to use')
+	.option('-s, --source <value>', 'API to use (gecimi, wangyiyun)')
 	.action((name, artist, options) => {
 		var source = 'wangyiyun';
 
