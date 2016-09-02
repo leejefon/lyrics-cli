@@ -18,8 +18,20 @@ var APIs = {
 program
 	.version('v0.1.0')
 	.arguments('<name> [artist]')
-	.action((name, artist) => {
-		APIs.gecimi.lyrics(name, artist);
+	.option('-s, --source <value>', 'API to use')
+	.action((name, artist, options) => {
+		var source = 'wangyiyun';
+
+		if (options.source) {
+			source = options.source;
+		}
+
+		switch (source) {
+			case 'gecimi':
+				APIs.gecimi.lyrics(name, artist); break;
+			default:
+				APIs.wangyiyun.lyrics(name, artist); break;
+		}
 	});
 
 program.parse(process.argv);
