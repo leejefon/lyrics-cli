@@ -1,10 +1,10 @@
 {
   "name": "lyrics-cli",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Get song lyrics on cli",
   "main": "index.js",
   "engines": {
-    "node": "6.x"
+    "node": "6.9.x"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,10 +20,10 @@
   },
   "homepage": "https://github.com/leejefon/lyrics-cli#readme",
   "dependencies": {
-    "bluebird": "^3.4.3",
+    "bluebird": "^3.4.7",
     "chinese-conv": "^1.0.1",
     "commander": "^2.9.0",
-    "request": "^2.74.0"
+    "request": "^2.79.0"
   },
   "bin": {
     "lyrics": "./index.js"
