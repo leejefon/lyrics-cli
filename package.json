@@ -6,9 +6,6 @@
   "engines": {
     "node": "6.9.x"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leejefon/lyrics-cli.git"
@@ -27,5 +24,15 @@
   },
   "bin": {
     "lyrics": "./index.js"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "babel-register": "^6.18.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "mocha": "^3.2.0"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test mocha --compilers js:babel-register --recursive"
   }
 }

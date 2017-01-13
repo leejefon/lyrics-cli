@@ -28,9 +28,15 @@ program
 
 		switch (source) {
 			case 'gecimi':
-				APIs.gecimi.lyrics(name, artist); break;
+				APIs.gecimi.lyrics(name, artist).then((lyrics) => {
+					console.log(lyrics);
+				});
+				break;
 			default:
-				APIs.wangyiyun.lyrics(name, artist); break;
+				APIs.wangyiyun.lyrics(name, artist).then((lyrics) => {
+					console.log(lyrics);
+				});
+				break;
 		}
 	});
 
