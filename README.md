@@ -1,4 +1,4 @@
-## Chinese Song Lyrics Cli
+## Song Lyrics Cli
 
 This module searches lyrics on command line.
 
@@ -28,11 +28,15 @@ lyrics 海闊天空 信樂團
 lyrics 'my heart will go on' 'celine dion'
 ```
 
+### Tests
+
+```shell
+npm test
+```
+
 ### TODO
 
-- Error handling
-- Tests
-- Remove time
+- Option to remove time
 - Show different results
 
 ### Notes
